@@ -19,9 +19,18 @@
   - type: `Integer`
   - example: `1`, `2`, `3`
 
-# Output
+## Output
 
 - Steps to move
   - description: Step will let us know move from where to where
   - type: `String`
   - example: `left to middle`
+
+## How to solve
+
+Just think of it, we need to move the largest disk to right tower, first. For that, we need to move all but this disk to middle tower. Hence we are solving the very same problem [twice] with one less disk.
+
+- To move N disks from left to right:
+  - **#1** [recursively] move N-1 disks from left to middle
+  - **#2** move largest disk from left to right
+  - **#3** [recursively] move N-1 disks from middle to right
